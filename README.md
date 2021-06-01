@@ -1,3 +1,22 @@
 # BigOTest
 
 
+Big O Notation
+
+
+1. Constant      O(1)
+2. Linear        O(n)
+3. Quadratic     O(n^2)
+4. Cubic         O(n^3)
+5. Exponential   O(2^n)
+6. Logarithmic   O(log(n))
+7. Log Linear    O(nlog(n))
+8. Factorial    O(n!)
+
+
+O(1) >> O(log(n)) >> O(n) >> O(nlog(n)) >> O(n^2) >> O(2^n) >> O(n!)
+
+      
+
+
+
