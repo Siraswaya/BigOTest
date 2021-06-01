@@ -139,6 +139,7 @@ O(nlog(n)) = เป็นการวนลูปสองรอบ ลูปช
         
 ## O(n!) - Factorial        
 O(n!) = ชนิดสุดท้ายที่ยกมาในวันนี้เรียกได้ว่าเลวร้ายที่สุดสำหรับ BigO
+
       static int factorialCheck(int n)
         {
             int result = 0;
@@ -165,3 +166,12 @@ O(n!) = ชนิดสุดท้ายที่ยกมาในวันน
             Console.ReadKey();
         }
 
+
+แหล่งอ้างอิง 
+: https://itopstory.com/what-why-and-type-big-o-notation-90a1a1d43596#:~:text=Big%20O%20Notation%20%E0%B8%84%E0%B8%B7%E0%B8%AD%20%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%B0,%E0%B8%A5%E0%B8%81%E0%B8%AD%E0%B8%A3%E0%B8%B4%E0%B8%97%E0%B8%B6%E0%B8%A1%20(Algorithm%20Complexity)
+
+: https://www.borntodev.com/2020/03/21/big-o-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3/
+
+: https://blog.rayriffy.com/big-o-notation
+
+: https://github.com/pavankat/big-o-in-plain-english/blob/master/README.md
