@@ -14,6 +14,15 @@
 O(1) >> O(log(n)) >> O(n) >> O(nlog(n)) >> O(n^2) >> O(2^n) >> O(n!)
 
 ## O(1) - Constant 
+O(1) = 1 เพราะไม่มี loop
+
+      static String bigO_1_evenOrOdd(int num)
+        {
+            String result = "";
+            if (num % 2 == 0) result = "Even";
+            else result = "Odd";
+            return result;
+        }
 
       static void Main(string[] args)
         {
@@ -23,6 +32,16 @@ O(1) >> O(log(n)) >> O(n) >> O(nlog(n)) >> O(n^2) >> O(2^n) >> O(n!)
         }
 
 ## O(n) - Linear      
+O(n) = ระยะเวลาขึ้นอยู่กับจำนวน input
+
+      static bool bigO_n_itemInList(int check, int[] list)
+        {
+            for (var i = 0; i < list.Length; i++)
+            {
+                if (list[i] == check) return true;
+            }
+            return false;
+        }
 
       static void Main(string[] args)
         {
@@ -33,7 +52,21 @@ O(1) >> O(log(n)) >> O(n) >> O(nlog(n)) >> O(n^2) >> O(2^n) >> O(n!)
             Console.ReadKey();
         }
         
-## O(n^2) - Quadratic     
+## O(n^2) - Quadratic   
+O(n^2) = ประสิทธิภาพช้า เพราะมีการวน Loop 2 ชั้น
+
+      static String bigO_n2(int[] list)
+        {           
+            String result = "";
+            for (var i = 0; i < list.Length; i++)
+            {// O(n)
+                for (int j = 0; j < list.Length; j++)
+                {// O(n)
+                    result= list[i].ToString();
+                }
+            }
+            return result;
+        }
 
       static void Main(string[] args)
         {
@@ -44,7 +77,14 @@ O(1) >> O(log(n)) >> O(n) >> O(nlog(n)) >> O(n^2) >> O(2^n) >> O(n!)
         }
         
 ## O(2^n) - Exponential   
+O(2^n) = เลวร้าย การเพิ่มขนาดของ input แค่นิดเดียว ก็ทำให้ระยะเวลาในการประมวลผลเพิ่มขึ้นแบบมหาศาล
 
+      static int fib(int number)
+        {
+            if (number <= 1) return number;
+            else return fib(number - 2) + fib(number - 1);
+        }
+        
       static void Main(string[] args)
         {
             int result2n=fib(5);
@@ -53,7 +93,19 @@ O(1) >> O(log(n)) >> O(n) >> O(nlog(n)) >> O(n^2) >> O(2^n) >> O(n!)
         }
         
 ## O(log(n)) - Logarithmic   
+O(log n) = ตัดจำนวนข้อมูลที่ไม่มีโอกาสเกิดขึ้นออกไปทีละครึ่ง
 
+      static int twoDivides(int x)
+        {
+            int count = 0;
+            while (x > 1)
+            {
+                x = x / 2;
+                count = count + 1;
+            }
+            return count;
+        }
+        
       static void Main(string[] args)
         {
             int resultLogN1 = twoDivides(9);
@@ -62,6 +114,20 @@ O(1) >> O(log(n)) >> O(n) >> O(nlog(n)) >> O(n^2) >> O(2^n) >> O(n!)
         }
         
 ## O(nlog(n)) - Log Linear  
+O(nlog(n)) = เป็นการวนลูปสองรอบ ลูปชั้นนอกวนแบบปกติ (n รอบ) แต่ลูปชั้นในวนแบบตัดข้อมูลที่ไม่เกี่ยวข้องออกไปทีละครึ่งด้วย (log n)
+
+      static int nlogn(int n)
+        {
+            int result=0;
+            for (int i = 0; i < n; i++)
+            { // this loop is executed n times, so O(n)
+                for (int j = n; j > 0; j = (j / 2))
+                { // this loop is executed log(n) times, so O(logn)
+                    result = j;
+                }
+            }
+            return result;
+        }
 
       static void Main(string[] args)
         {
@@ -72,7 +138,7 @@ O(1) >> O(log(n)) >> O(n) >> O(nlog(n)) >> O(n^2) >> O(2^n) >> O(n!)
         
         
 ## O(n!) - Factorial        
-
+O(n!) = ชนิดสุดท้ายที่ยกมาในวันนี้เรียกได้ว่าเลวร้ายที่สุดสำหรับ BigO
       static int factorialCheck(int n)
         {
             int result = 0;
